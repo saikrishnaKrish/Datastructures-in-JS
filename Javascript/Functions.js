@@ -1,3 +1,12 @@
+//Day 21 -
+
+/*  1. Types of functions in Javascript
+// 	1. Function without params and with params.
+// 	2. Function with and without return type.
+//   3. Function as an expression
+// 4. Function passing as a parameter
+
+
 let a=[2,4,6,67,66] //array
 
 console.log(typeof a)
@@ -44,8 +53,8 @@ var aa=222
 console.log(aa)
 
 
-//homogenous
-//heterogenous
+//homogenous --- same datatype of elements
+//heterogenous -- different datatype of elements
 
 
 
@@ -82,7 +91,7 @@ let z = Calculator(22,3,add)
 console.log(z)
 
 /**
- * 
+ * //pratice programs
  * add two numbers //basic function
  * Create a calculator function
  * prime number 
@@ -96,10 +105,7 @@ console.log(z)
 
 
 
-
-
-
-
+//pratice programs
 let a = 10;
 console.log("line number 2", a);
 
