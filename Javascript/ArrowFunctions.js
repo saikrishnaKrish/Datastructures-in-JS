@@ -22,10 +22,10 @@
 //function inside a function or Nested Functions
 function welcomeUser(){
     console.log("Good Day!!!")
-    return function greetingUser(){
-        return "Happy to See you here!!!"
-    }
+    return "jii"
 }
+console.log(welcomeUser())
+
 
 
 // ===========================================================
@@ -55,7 +55,12 @@ const welcomeUser=(username)=>{
 
 const welcomeUser=(username)=>  console.log("Good Day!!!" + username)
 welcomeUser("greeshma","Jake")
+
+
 console.log(welcomeUser("greeshma","Jake"))
+
+
+
 const add = (num1,num2)=> num1+num2 
 const sub = (num1,num2)=> num1-num2 
 const mul = (num1,num2)=> num1*num2 
@@ -142,34 +147,34 @@ getFirstName("Sirish")
             // compute some result and call the callback function
 
             
-    function randomValue(cb){
-        function fun1(){
-            console.log("Inside fun1")
-    
-            function fun2(){
-                console.log("Inside fun2")
-    
-                   function fun3(){
-                       console.log("Inside fun3")
-                   }
-    
-                   fun3()
+        function randomValue(cb){
+            function fun1(){
+                console.log("Inside fun1")
+        
+                function fun2(){
+                    console.log("Inside fun2")
+        
+                    function fun3(){
+                        console.log("Inside fun3")
+                    }
+        
+                    fun3()
+                }
+        
+                fun2()
             }
-    
-            fun2()
+            fun1()
+
+                cb()
+
         }
-        fun1()
 
-            cb()
+        function cb(){
+            console.log("Inside callback function")
+        }
 
-    }
-
-    function cb(){
-        console.log("Inside callback function")
-    }
-
-    
-    randomValue(cb)
+        
+        randomValue(cb)
 
 
     // passing params

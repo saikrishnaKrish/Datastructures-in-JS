@@ -149,4 +149,3 @@ console.log(gAByLoc("Have a happy weekend","Rajesh"))
         // We use call when we want to borrow a method only once with a defined number of parameters.
         // We use apply when we want to borrow a method only once with n number of parameters.
         // We use bind when we want to use a method multiple times and we want to make a permanent copy of that method.
-        

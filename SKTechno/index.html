@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="sai krishna"/>
+    <meta http-equiv="refresh" content="10"/>
+    <title>Document</title>
+
+    <script type="text/javascript" >
+        document.addEventListener("DOMContentLoaded",function(){
+            // let paraDiv = document.querySelector("#first")
+            // console.log(paraDiv)
+            // let frgDiv =document.createDocumentFragment('li');
+            // for(let i=0;i<100;i++){
+            //    let newLi = document.createElement("li");
+            //    newLi.textContent=`text added ${i+1}`
+            //    frgDiv.appendChild(newLi)
+            // }
+            // paraDiv.appendChild(frgDiv)
+
+
+            // const box = document.querySelector("#btn1");
+
+            // console.log("btnId",box)
+            // box.addEventListener("click",()=>{
+            //     alert("clicked !!!!")
+                
+            // })
+
+            const outerBox = document.querySelector("#outer_box")
+            const innerBox = document.querySelector("#inner_box")
+            const button = document.querySelector("#button");
+
+            button.addEventListener("click", (e) => {
+            console.log("Button was clicked", e.target, "ctarget",
+                e.currentTarget
+            )
+        })
+
+        innerBox.addEventListener("click", (e) => {
+            console.log("innerBox was clicked", e.target, "ctarget",
+                e.currentTarget)
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+        })
+        innerBox.addEventListener("click", (e) => {
+            console.log("innerBox was  next handler");
+        })
+        outerBox.addEventListener("click", (e) => {
+            console.log("outerBox was clicked", e.target, "ctarget",
+                e.currentTarget)
+        })
+        document.addEventListener("click", (e) => {
+            console.log("doc was clicked", e.target, "ctarget",
+                e.currentTarget)
+        })
+        })
+
+    </script>
+</head>
+
+<body>
+    <!-- <aside>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            In tenetur architecto sed illum nostrum voluptatum enim obcaecati natus
+            dignissimos ut corporis perferendis ab doloribus totam, cum nihil ipsa, perspiciatis beatae. Consequatur
+            perspiciatis culpa sint libero porro aut blanditiis enim explicabo consectetur reprehenderit excepturi
+            quisquam voluptas a nihil labore maxime aspernatur ex sunt incidunt tempora, pariatur accusamus quibusdam.
+            Accusantium debitis non perferendis porro similique obcaecati, soluta eaque aliquam consequatur? Amet, vel.
+            Quas ex adipisci magnam corporis sit quis, sapiente, unde iusto odio itaque a. Maxime magnam quia similique
+            sed veritatis iusto cupiditate cum, assumenda neque quam ex quidem dolor quae aperiam placeat voluptatem
+            rerum! Ut commodi qui, magni perferendis, expedita iste dolorem ratione odit et adipisci a facilis mollitia,
+            numquam temporibus? Nisi reprehenderit in facilis, possimus, dolores labore maiores magnam, iusto ab eius
+            error tenetur dicta repudiandae officia voluptatum commodi architecto corrupti veniam ex a quas sed
+            distinctio similique. Nesciunt beatae iure reprehenderit quaerat alias veniam cupiditate. Eveniet dolor
+            nobis voluptates quod, cumque adipisci in explicabo, laboriosam voluptate fugiat, nulla suscipit. Ut
+            dignissimos, totam quos porro voluptate ducimus facilis harum tempora adipisci numquam repudiandae sequi
+            itaque illum sed ad eum commodi excepturi incidunt quas? Architecto quia fuga magni repellendus, provident
+            debitis suscipit, dicta quam in modi nobis reprehenderit facere ullam reiciendis, magnam inventore quasi
+            rerum eos voluptatibus minus accusamus! Facilis, molestias veritatis dolores error consectetur beatae
+            voluptatem dolorem exercitationem vero animi ex ea in amet labore minima culpa porro modi repudiandae!</p>
+    </aside>
+
+    <div id="main">
+        <p id="first">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis laboriosam, quae sit necessitatibus numquam et
+            tenetur odit, similique vitae asperiores beatae accusamus! Suscipit veniam voluptates est? Earum adipisci
+            soluta voluptatem!</p>
+        <p id="second">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse mollitia vitae ex laborum pariatur natus,
+            officia ratione nostrum, incidunt maiores atque officiis quas molestiae ducimus quibusdam? Architecto
+            deserunt accusamus veniam.</p>
+        <p id="third">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, veritatis quis earum blanditiis
+            reprehenderit in officia aliquid dignissimos nulla iste.</p>
+
+
+            <button id="btn1"> Click Me</button>
+    </div> -->
+
+    <h1>Event Bubbling</h1>
+    <div id="outer_box" style="background-color: orange;">
+        <div id="inner_box" style=" background-color: aqua;">
+            innerBox was clicked
+            <div id="button" style="background-color: blueviolet;">
+                    Click Me
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+

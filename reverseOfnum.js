@@ -11,7 +11,7 @@ function revNum(num){
 
 
 
-// console.log(revNum(7892))
+console.log(revNum(7892))
 
 
 //without recursion --O(n)
@@ -40,3 +40,66 @@ function reverseNumber(num) {
     const quotient = Math.floor(num / 10);
     return parseInt(remainder.toString() + reverseNumber(quotient).toString());
 }
+
+
+
+const a={
+    a:[22,3,4,5,444,35],
+    b:{
+        a:"sai",
+        b:{
+            aa:"wew"
+        },
+        c:{
+            a:1111
+        }
+    }
+}
+
+function flattenArray(arr){
+    let newArr=[];
+    for(let i=0;i<arr.length;i++){
+        // console.log(arr[i])
+        let elem=arr[i];
+        if(Array.isArray(elem)){
+            let smalleFlattenArr=flattenArray(elem);
+            newArr.push(...smalleFlattenArr);
+        }
+        else{
+            newArr.push(elem);
+        }
+    }
+    return newArr
+}
+
+let input = [1, 2, 3, [4, 5], [6, 7, 8, [9, 10, 11]]]
+console.log(flattenArray(input))
+
+
+
+
+
+let input = [1, 2, 3, [4, 5], [6, 7, 8, [9, 10, 11]]]
+
+for(let key in input){
+    console.log(input[key])
+}
+
+
+
+var firstName = "Loki"
+let cap = {
+    firstName : "Steve",
+    sayHi : function(){
+        console.log("53", this.firstName);
+        const subInner = () => {
+            console.log("54", this.firstName);
+            const iAmInner = ()=> {
+                console.log("55", this.firstName);
+            }
+            iAmInner();
+        }
+        subInner();
+    }
+}
+cap.sayHi();
