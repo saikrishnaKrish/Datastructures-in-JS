@@ -1,0 +1,15 @@
+.fdlLabel{
+    font-size: large;
+}
+
+.fdlInp{
+    padding: 14px;
+    margin: 10px;
+
+}
+
+#fdlCount{
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+}
