@@ -13,3 +13,12 @@
     padding: 10px;
     margin: 10px;
 }
+
+
+#searchInp{
+    margin: 10px;
+    font-size: larger;
+    width: 46%;
+    padding: 10px;
+    border-radius: 10px;
+}

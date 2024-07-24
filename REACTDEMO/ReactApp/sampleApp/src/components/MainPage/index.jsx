@@ -15,7 +15,11 @@ const MainComp = () => {
     // const [prodcutsData, setProductsData] = useState([]);
     // const [error, setError] = useState("");
     // const [isLoading, setIsLoading] = useState(false);
+    const [searchInput,setSearchInput] = useState("")
+    const [searchResult,setSearchedResult] =useState([])
     const {error,isLoading,data:prodcutsData} = useFetchData("http://fakestoreapi.com/products",[]) //custom hook
+
+
     // console.log(fetchedData)
     // async function MakeApiCall() {
     //     try {
@@ -56,6 +60,31 @@ const MainComp = () => {
 
     }
 
+    const handleSearchInput=()=>{
+      let searchResults = prodcutsData.filter((val)=> 
+        val.title.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
+      || val.description.toLowerCase().includes(searchInput.toLocaleLowerCase())
+        )
+  
+      setSearchedResult(searchResults)
+    }
+
+    useEffect(()=>{
+        console.log("first")
+        if(prodcutsData.length > 0){
+            localStorage.setItem('productsData',JSON.stringify(prodcutsData))
+        }
+    },[prodcutsData])
+
+    useEffect(()=>{
+        if(searchInput==""){
+            setSearchedResult(prodcutsData)
+        }
+        else{
+            handleSearchInput()
+        }
+    },[searchInput])// depency array
+
     return <div style={{
 
         background: "#607f60",
@@ -83,7 +112,7 @@ const MainComp = () => {
                 Unable to load Data {error}
             </p>
         }
-        <div>
+        {/* <div>
             <form>
                          <h1>Feedback Form</h1>
                             <fieldset>
@@ -125,11 +154,18 @@ const MainComp = () => {
             </form>
                                   
 
-        </div>
-
+        </div> */}
+    <div>
+        {/* {JSON.stringify(searchInput)} */}
+        <input type="text" 
+        placeholder="Enter a value"
+        id="searchInp"
+        onChange={(e)=>setSearchInput(e.target.value)}/>
+        <button onClick={handleSearchInput}>Search</button>
+    </div>
         {/* Passing data from parent to child component as props*/}
         {prodcutsData.length > 0 &&
-            <ProdcutsDataComp pData={prodcutsData} active={active} />
+            <ProdcutsDataComp pData={searchResult} active={active} />
         }
     </div>
 

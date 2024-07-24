@@ -4,6 +4,7 @@ import IuseEffectHook from './hooks/IuseEffectHook'
 import MainComp from './components/MainPage'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Counter from './components/Counter'
 
 const App = () => {
   return (
@@ -12,6 +13,8 @@ const App = () => {
          {/* <IuseStateHook/> */}
           <Header/>
          <MainComp/>
+         <Counter/>
+
          <Footer/>  
 
     </div>

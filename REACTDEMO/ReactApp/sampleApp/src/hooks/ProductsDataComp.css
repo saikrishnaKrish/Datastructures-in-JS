@@ -6,6 +6,7 @@
     padding: 10px 25px;
     margin: 10px;
     border-radius: 20px;
+    display: flex
 }
 
 .productContInActive{
@@ -18,3 +19,13 @@
     border-radius: 20px;
 }
 
+
+#productImg{
+    width: 20%;
+    height: 20%;
+
+}
+
+#productDetails {
+    margin: 10px;
+}

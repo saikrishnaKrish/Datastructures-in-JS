@@ -5,10 +5,17 @@ const  ProdcutsDataComp = (props)=>{  //passing props from parent to child
     // console.log(active)
    return pData?.map((product)=>{ // return the HTML from child component
         return <div className={active ? "productContainer": "productContInActive" }>
-                   <p>productId : {product.id}</p> 
+
+            <img src={product.image} alt={product.title} id='productImg'/>
+       
+     <div id='productDetails'>
+
+             <p>productId : {product.id}</p> 
                    <p>Description : {product.description}</p>   
                    <p> price : {product.price}</p>  
                    <p>Title : {product.title}</p>  
+     </div>
+                
             </div>
             
     })
